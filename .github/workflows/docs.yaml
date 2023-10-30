@@ -35,10 +35,14 @@ jobs:
       #    version: 1.0
 
       - name: run docker
-        run: sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }}
+        run: |
+          echo "INPUTPATH=${{ env.INPUTPATH }}" >> "$GITHUB_ENV"
+          echo "OUTPUTPATH=${{ env.OUTPUTPATH }}" >> "$GITHUB_ENV"
+          echo "CREATE_SLIDES=${{ env.SLIDES }}" >> "$GITHUB_ENV"
+          sudo scripts/docker-convert.sh 
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
 
 
       - name: Deploy to GitHub Pages
