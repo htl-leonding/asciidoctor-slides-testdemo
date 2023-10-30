@@ -5,7 +5,6 @@ convertFilesToSlides() {
   asciidoctorVersion=$2
 
   downloadReveal $inputPath
-  revealFolder="$inputPath/slides/revealjs"
 
   docker run --rm \
          -v ${PWD}/$inputPath/slides:/documents \
@@ -15,7 +14,7 @@ convertFilesToSlides() {
          -a revealjs_theme=white \
          -a source-highlighter=rouge \
          -a imagesdir=images \
-         -a revealjsdir=$revealFolder \
+         -a revealjsdir=revealjs \
          -a revealjs_slideNumber=c/t \
          -a revealjs_transition=slide \
          -a revealjs_hash=true \
