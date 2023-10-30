@@ -85,7 +85,7 @@ convertFilesToHTML() {
 
       rm -rf -v $inputPath/docs/*.adoc
       mv $inputPath/docs/* $inputPath
-      rm $inputPath/docs
+      rmdir $inputPath/docs
 
       tree
 

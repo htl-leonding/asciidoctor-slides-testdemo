@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       INPUTPATH: asciidocs
-      SLIDES: false
+      SLIDES: true
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v4
