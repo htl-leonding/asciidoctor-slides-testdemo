@@ -34,13 +34,13 @@ jobs:
       #    packages:  asciidoctor graphviz
       #    version: 1.0
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: run docker
         run: |
           sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }} ${{ env.SLIDES }}
           tree
-
-      #- name: Setup tmate session
-      #  uses: mxschmitt/action-tmate@v3
 
 
       - name: Deploy to GitHub Pages
