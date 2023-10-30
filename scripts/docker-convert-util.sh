@@ -27,7 +27,9 @@ convertFileToSlides() {
   imgFolder=$2
   revealFolder=$3
 
-  asciidoctor-revealjs \
+  docker run --rm \
+         -v $inputPath:/documents \
+         asciidoctor/docker-asciidoctor:1.58.0 asciidoctor-revealjs \
          -r asciidoctor-diagram \
          -a icons=font \
          -a revealjs_theme=white \
@@ -92,7 +94,9 @@ convertFileToHTML() {
   file=$1
   imgFolder=$2
 
-    asciidoctor \
+    docker run --rm \
+      -v $inputPath:/documents \
+      asciidoctor/docker-asciidoctor:158 /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
       -a experimental=true \
@@ -100,7 +104,7 @@ convertFileToHTML() {
       -a rouge-theme=github \
       -a rouge-linenums-mode=inline \
       -a docinfo=shared \
-      -a imagesdir="$imgFolder" \
+      -a imagesdir="$inputPath/images" \
       -a toc=left \
       -a toclevels=2 \
       -a sectanchors=true \
@@ -108,6 +112,5 @@ convertFileToHTML() {
       -a favicon=themes/favicon.png \
       -a sourcedir=src/main/java \
       -b html5 \
-      "$file"
-    rm "$file"
+      **/*.adoc"
 }

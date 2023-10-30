@@ -16,7 +16,7 @@ jobs:
     env:
       INPUTPATH: asciidocs
       OUTPUTPATH: dist
-      SLIDES: true
+      SLIDES: false
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v4
