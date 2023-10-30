@@ -21,12 +21,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build
-        uses: quirinecker/asciidoctor-convert-action@main
-        with:
-          slides: ${{ env.SLIDES }}
-          inputPath: ${{ env.INPUTPATH }}
-          outputPath: ${{ env.OUTPUTPATH }}
+      #- name: Build
+      #  uses: quirinecker/asciidoctor-convert-action@main
+      #  with:
+      #    slides: ${{ env.SLIDES }}
+      #    inputPath: ${{ env.INPUTPATH }}
+      #    outputPath: ${{ env.OUTPUTPATH }}
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
+      - name: Convert asciidoctor
+        run: apt install -y asciidoctor
+
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
