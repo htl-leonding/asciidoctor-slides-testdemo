@@ -114,5 +114,5 @@ convertFileToHTML() {
       -a favicon=themes/favicon.png \
       -a sourcedir=src/main/java \
       -b html5 \
-      **/*.adoc"
+      '**/*.adoc'"
 }
