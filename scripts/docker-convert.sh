@@ -3,8 +3,8 @@
 ls -l
 tree
 source scripts/docker-convert-util.sh
-inputPath="$INPUT_INPUTPATH"
-outputPath="$INPUT_OUTPUTPATH"
+inputPath="$1"
+outputPath="$2"
 slideInputPath="$inputPath/slides"
 slideOutputPath="$outputPath/slides"
 

@@ -34,8 +34,8 @@ jobs:
       #    packages:  asciidoctor graphviz
       #    version: 1.0
 
-      #- name: run docker
-      #  run: sudo scripts/docker-convert.sh
+      - name: run docker
+        run: sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }}
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
