@@ -17,6 +17,8 @@ echo building html
 mkdir $outputPath
 cp -r $inputPath/* $outputPath
 
+echo "env.SLIDES => ${{ env.SLIDES }}"
+
 if [ ${{ env.SLIDES }} = true ]; then
     convertFolderToSlides "$slideInputPath" "$slideOutputPath" "$outputPath"
 fi
