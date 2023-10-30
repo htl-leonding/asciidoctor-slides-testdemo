@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-tree
 inputPath="$1"
 createSlides="$2"
 source $inputPath/scripts/docker-convert-util.sh
