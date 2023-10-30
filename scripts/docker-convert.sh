@@ -28,3 +28,4 @@ convertFolderToHTML "$outputPath"
 if [ -d "$inputPath" ] && [ -d "$outputPath" ]; then
     chown $(stat "$inputPath" -c %u:%g) "$outputPath" -R
 fi
+

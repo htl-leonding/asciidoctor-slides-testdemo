@@ -110,3 +110,4 @@ convertFileToHTML() {
       "$file"
     rm "$file"
 }
+
