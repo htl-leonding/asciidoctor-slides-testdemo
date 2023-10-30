@@ -34,14 +34,8 @@ jobs:
       #    packages:  asciidoctor graphviz
       #    version: 1.0
 
-      - name: set environment variables
-        run: |
-          echo "INPUT_PATH=${{ env.INPUTPATH }}" >> "$GITHUB_ENV"
-          echo "OUTPUT_PATH=${{ env.OUTPUTPATH }}" >> "$GITHUB_ENV"
-          echo "CREATE_SLIDES=${{ env.SLIDES }}" >> "$GITHUB_ENV"
-
       - name: run docker
-        run: source sudo scripts/docker-convert.sh
+        run: sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }} ${{ env.SLIDES }}
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
