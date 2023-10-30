@@ -41,7 +41,7 @@ jobs:
           echo "CREATE_SLIDES=${{ env.SLIDES }}" >> "$GITHUB_ENV"
 
       - name: run docker
-        run: sudo scripts/docker-convert.sh
+        run: sudo source scripts/docker-convert.sh
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
