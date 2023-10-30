@@ -35,7 +35,9 @@ jobs:
       #    version: 1.0
 
       - name: run docker
-        run: sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }} ${{ env.SLIDES }}
+        run: |
+          sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }} ${{ env.SLIDES }}
+          tree
 
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
@@ -45,6 +47,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           # GITHUB_TOKEN: ${{ github.TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH }}
           folder: ${{ env.OUTPUTPATH }}

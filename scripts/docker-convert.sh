@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-env
 tree
 source scripts/docker-convert-util.sh
 inputPath="$1"
