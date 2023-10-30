@@ -117,6 +117,6 @@ convertFilesToHTML() {
     #  '**/*.adoc'"
 
     docker run --rm \
-      -v $inputPath:/documents \
+      -v ${PWD}/$inputPath:/documents \
       asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
 }
