@@ -73,26 +73,28 @@ evalPath() {
 }
 
 convertFolderToHTML() {
-    outputPath=$1
-    echo $outputPath
+    inputPath=$1
+    outputPath=$2
+
 
     echo "=== compiling HTML  ==="
+    echo $inputPath
+    echo $outputPath
 
-    i=1
-    numberOfFiles=$(find "$outputPath" -type f -name "*.adoc" | wc -l)
-    for f in $(find "$outputPath" -type f -name "*.adoc"); do
-        imgFolder=$(evalPath "/documents/${f%/*}" "/documents/$outputPath/images")
+    #i=1
+    #numberOfFiles=$(find "$outputPath" -type f -name "*.adoc" | wc -l)
+    #for f in $(find "$outputPath" -type f -name "*.adoc"); do
+    #    imgFolder=$(evalPath "/documents/${f%/*}" "/documents/$outputPath/images")
 
-        echo "[$((i*100 / numberOfFiles)) %] compiling $f"
-        convertFileToHTML "$f" "$imgFolder"
+    #    echo "[$((i*100 / numberOfFiles)) %] compiling $f"
+        convertFileToHTML #"$f" "$imgFolder"
 
-        i=$((i+1))
-    done
+    #    i=$((i+1))
+    #done
 }
 
 convertFileToHTML() {
-  file=$1
-  imgFolder=$2
+
 
     docker run --rm \
       -v $inputPath:/documents \
