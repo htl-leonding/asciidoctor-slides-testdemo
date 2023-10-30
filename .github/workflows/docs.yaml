@@ -15,18 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       INPUTPATH: asciidocs
-      OUTPUTPATH: dist
       SLIDES: false
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v4
-
-      #- name: Build
-      #  uses: quirinecker/asciidoctor-convert-action@main
-      #  with:
-      #    slides: ${{ env.SLIDES }}
-      #    inputPath: ${{ env.INPUTPATH }}
-      #    outputPath: ${{ env.OUTPUTPATH }}
 
       #- name: install packages
       #  uses: awalsh128/cache-apt-pkgs-action@latest
@@ -39,7 +31,7 @@ jobs:
 
       - name: run docker
         run: |
-          sudo scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.OUTPUTPATH }} ${{ env.SLIDES }}
+          sudo ${{ env.INPUTPATH }}/scripts/docker-convert.sh ${{ env.INPUTPATH }} ${{ env.SLIDES }}
           tree
 
 
@@ -49,4 +41,4 @@ jobs:
           # GITHUB_TOKEN: ${{ github.TOKEN }}
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH }}
-          folder: ${{ env.OUTPUTPATH }}
+          folder: ${{ env.INPUTPATH }}

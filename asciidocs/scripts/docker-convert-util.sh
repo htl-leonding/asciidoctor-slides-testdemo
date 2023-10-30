@@ -2,8 +2,6 @@
 
 convertFolderToSlides() {
   inputPath=$1
-  slidesOutputPath=$2
-  baseOutputPath=$3
 
   echo "=== compiling Slides  ==="
 
@@ -22,34 +20,34 @@ convertFolderToSlides() {
   done
 }
 
-convertFileToSlides() {
-  file=$1
-  imgFolder=$2
-  revealFolder=$3
+convertFilesToSlides() {
+  inputPath=$1
+  asciidoctorVersion=$2
+
+  downloadReveal $inputPath
+  revealFolder="$inputPath/slides"
 
   docker run --rm \
-         -v $inputPath:/documents \
-         asciidoctor/docker-asciidoctor:1.58.0 asciidoctor-revealjs \
+         -v ${PWD}/$inputPath/slides:/documents \
+         asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor-revealjs \
          -r asciidoctor-diagram \
          -a icons=font \
          -a revealjs_theme=white \
          -a source-highlighter=rouge \
-         -a imagesdir="$imgFolder" \
-         -a revealjsdir="$revealFolder" \
+         -a imagesdir=images \
+         -a revealjsdir=$revealFolder \
          -a revealjs_slideNumber=c/t \
          -a revealjs_transition=slide \
          -a revealjs_hash=true \
          -a sourcedir=src/main/java \
          -b revealjs \
-         "$file"
-  rm "$file"
+         '**/*.adoc'"
 }
 
 downloadReveal() {
   inputPath=$1
-  outputPath=$2
   REVEAL_VERSION="5.0.0"
-  REVEAL_DIR="$inputPath"
+  REVEAL_DIR="$inputPath/slides"
   curl -L https://github.com/hakimel/reveal.js/archive/$REVEAL_VERSION.zip --output revealjs.zip
   unzip revealjs.zip
   mv reveal.js-$REVEAL_VERSION ./$REVEAL_DIR/revealjs
@@ -57,47 +55,16 @@ downloadReveal() {
   rm revealjs.zip
 }
 
-evalPath() {
-  pos=$1
-  ref=$2
-  down=''
 
-  while :; do
-      test "$pos" = '/' && break
-      case "$ref" in $pos/*) break;; esac
-      down="../$down"
-      pos=${pos%/*}
-  done
-
-  echo "$down${ref##$pos/}"
-}
-
-convertFolderToHTML() {
-    inputPath=$1
-    outputPath=$2
-
-
-    #i=1
-    #numberOfFiles=$(find "$outputPath" -type f -name "*.adoc" | wc -l)
-    #for f in $(find "$outputPath" -type f -name "*.adoc"); do
-    #    imgFolder=$(evalPath "/documents/${f%/*}" "/documents/$outputPath/images")
-
-    #    echo "[$((i*100 / numberOfFiles)) %] compiling $f"
-        convertFileToHTML #"$f" "$imgFolder"
-
-    #    i=$((i+1))
-    #done
-}
 
 convertFilesToHTML() {
 
     echo "=== compiling HTML  ==="
     echo $inputPath
-    echo $outputPath
 
 
     docker run --rm \
-      -v ${PWD}/$inputPath:/documents \
+      -v ${PWD}/$inputPath/docs:/documents \
       asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
@@ -115,6 +82,11 @@ convertFilesToHTML() {
       -a sourcedir=src/main/java \
       -b html5 \
       '**/*.adoc'"
+
+      rm -rf -v $inputPath/*.adoc
+      mv $inputPath/docs $inputPath
+
+      tree
 
     #docker run --rm \
     #  -v ${PWD}/$inputPath:/documents \
