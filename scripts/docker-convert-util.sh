@@ -72,6 +72,7 @@ evalPath() {
 
 convertFolderToHTML() {
     outputPath=$1
+    echo $outputPath
 
     echo "=== compiling HTML  ==="
 
