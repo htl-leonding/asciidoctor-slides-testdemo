@@ -11,7 +11,7 @@ echo "createSlides => $createSlides"
 echo building html
 
 if [ $createSlides = true ]; then
-    convertFolderToSlides "$inputPath" $ASCIIDOCTOR_VERSION
+    convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
 fi
 
 inputPath="$inputPath"
