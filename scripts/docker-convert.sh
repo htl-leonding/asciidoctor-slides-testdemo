@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+ls -l
+tree
 source ./docker-convert-util.sh
 inputPath="$INPUT_INPUTPATH"
 outputPath="$INPUT_OUTPUTPATH"

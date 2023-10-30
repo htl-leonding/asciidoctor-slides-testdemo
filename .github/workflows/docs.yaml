@@ -28,11 +28,11 @@ jobs:
       #    inputPath: ${{ env.INPUTPATH }}
       #    outputPath: ${{ env.OUTPUTPATH }}
 
-      - name: install packages
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages:  asciidoctor graphviz
-          version: 1.0
+      #- name: install packages
+      #  uses: awalsh128/cache-apt-pkgs-action@latest
+      #  with:
+      #    packages:  asciidoctor graphviz
+      #    version: 1.0
 
       - name: run docker
         run: sudo scripts/docker-convert.sh
