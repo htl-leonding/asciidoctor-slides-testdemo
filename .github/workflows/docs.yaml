@@ -36,8 +36,8 @@ jobs:
 
       - name: set environment variables
         run: |
-          echo "INPUTPATH=${{ env.INPUTPATH }}" >> "$GITHUB_ENV"
-          echo "OUTPUTPATH=${{ env.OUTPUTPATH }}" >> "$GITHUB_ENV"
+          echo "INPUT_PATH=${{ env.INPUTPATH }}" >> "$GITHUB_ENV"
+          echo "OUTPUT_PATH=${{ env.OUTPUTPATH }}" >> "$GITHUB_ENV"
           echo "CREATE_SLIDES=${{ env.SLIDES }}" >> "$GITHUB_ENV"
 
       - name: run docker

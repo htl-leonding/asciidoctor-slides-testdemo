@@ -3,8 +3,8 @@
 env
 tree
 source scripts/docker-convert-util.sh
-inputPath="$INPUTPATH"
-outputPath="$OUTPUTPATH"
+inputPath="$INPUT_PATH"
+outputPath="$OUTPUT_PATH"
 slideInputPath="$inputPath/slides"
 slideOutputPath="$outputPath/slides"
 
@@ -17,9 +17,9 @@ echo building html
 mkdir $outputPath
 cp -r $inputPath/* $outputPath
 
-echo "env.SLIDES => ${{ env.SLIDES }}"
+echo "CREATE_SLIDES => $CREATE_SLIDES"
 
-if [ ${{ env.SLIDES }} = true ]; then
+if [ $CREATE_SLIDES = true ]; then
     convertFolderToSlides "$slideInputPath" "$slideOutputPath" "$outputPath"
 fi
 
