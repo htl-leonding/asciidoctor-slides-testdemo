@@ -28,11 +28,14 @@ jobs:
       #    inputPath: ${{ env.INPUTPATH }}
       #    outputPath: ${{ env.OUTPUTPATH }}
 
+      - name: install packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages:  asciidoctor graphviz
+          version: 1.0
+
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-
-      - name: Convert asciidoctor
-        run: apt install -y asciidoctor
 
 
       - name: Deploy to GitHub Pages
