@@ -1,24 +1,24 @@
 #!/usr/bin/bash
 
-convertFolderToSlides() {
-  inputPath=$1
-
-  echo "=== compiling Slides  ==="
-
-  i=1
-  numberOfFiles=$(find "$slidesOutputPath" -type f -name "*.adoc" | wc -l)
-  [ ! -d "$inputPath/revealjs" ] && downloadReveal "$inputPath" "$slidesOutputPath"
-
-  for f in $(find "$slidesOutputPath" -type f -name "*.adoc"); do
-      imgFolder=$(evalPath "/documents/${f%/*}" "/documents/$baseOutputPath/images")
-      revealFolder=$(evalPath "/documents/${f%/*}" "/documents/$slidesOutputPath/revealjs")
-
-      echo "[$((i*100 / numberOfFiles)) %] compiling $f"
-      convertFileToSlides "$f" "$imgFolder" "$revealFolder"
-
-      i=$((i+1))
-  done
-}
+#convertFolderToSlides() {
+#  inputPath=$1
+#
+#  echo "=== compiling Slides  ==="
+#
+#  i=1
+#  numberOfFiles=$(find "$slidesOutputPath" -type f -name "*.adoc" | wc -l)
+#  [ ! -d "$inputPath/revealjs" ] && downloadReveal "$inputPath" "$slidesOutputPath"
+#
+#  for f in $(find "$slidesOutputPath" -type f -name "*.adoc"); do
+#      imgFolder=$(evalPath "/documents/${f%/*}" "/documents/$baseOutputPath/images")
+#      revealFolder=$(evalPath "/documents/${f%/*}" "/documents/$slidesOutputPath/revealjs")
+#
+#      echo "[$((i*100 / numberOfFiles)) %] compiling $f"
+#      convertFileToSlides "$f" "$imgFolder" "$revealFolder"
+#
+#      i=$((i+1))
+#  done
+#}
 
 convertFilesToSlides() {
   inputPath=$1
@@ -50,6 +50,7 @@ downloadReveal() {
   REVEAL_DIR="$inputPath/slides"
   curl -L https://github.com/hakimel/reveal.js/archive/$REVEAL_VERSION.zip --output revealjs.zip
   unzip revealjs.zip
+  tree
   mv reveal.js-$REVEAL_VERSION ./$REVEAL_DIR/revealjs
   cp -r "$inputPath/revealjs" "$outputPath/revealjs"
   rm revealjs.zip
@@ -58,14 +59,15 @@ downloadReveal() {
 
 
 convertFilesToHTML() {
+    inputPath=$1
+    asciidoctorVersion=$2
 
     echo "=== compiling HTML  ==="
     echo $inputPath
 
-
     docker run --rm \
       -v ${PWD}/$inputPath/docs:/documents \
-      asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "asciidoctor \
+      asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
       -a experimental=true \
