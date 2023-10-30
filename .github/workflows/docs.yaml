@@ -20,15 +20,11 @@ jobs:
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v4
-      - name: Build
-        uses: quirinecker/asciidoctor-convert-action@1.0
+
+      - name: asciidoctor-ghpages
+        uses: manoelcampos/asciidoctor-ghpages-action@v2
         with:
-          slides: ${{ env.SLIDES }}
-          inputPath: ${{ env.INPUTPATH }}
-          outputPath: ${{ env.OUTPUTPATH }}
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          GITHUB_TOKEN: ${{ github.TOKEN }}
-          BRANCH: ${{ env.BRANCH }}
-          FOLDER: ${{ env.OUTPUTPATH }}
+          slides_build: ${{ env.SLIDES }}
+          source_dir: ${{ env.INPUTPATH }}
+          # outputPath: ${{ env.OUTPUTPATH }}
+
