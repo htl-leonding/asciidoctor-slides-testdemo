@@ -17,9 +17,8 @@ if [ $createSlides = true ]; then
 fi
 
 inputPath="$inputPath"
-outputPath="$outputPath"
 
-convertFilesToHTML "$inputPath" "$outputPath"
+convertFilesToHTML "$inputPath"
 
 # set permissions of output folder to the same as the input folder - fixes #1
 #if [ -d "$inputPath" ] && [ -d "$outputPath" ]; then
