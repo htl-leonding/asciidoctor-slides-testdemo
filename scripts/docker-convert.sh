@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source /docker-scripts/docker-convert-util.sh
+source ./docker-convert-util.sh
 inputPath="$INPUT_INPUTPATH"
 outputPath="$INPUT_OUTPUTPATH"
 slideInputPath="$inputPath/slides"
@@ -28,4 +28,3 @@ convertFolderToHTML "$outputPath"
 if [ -d "$inputPath" ] && [ -d "$outputPath" ]; then
     chown $(stat "$inputPath" -c %u:%g) "$outputPath" -R
 fi
-
