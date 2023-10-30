@@ -26,7 +26,7 @@ fi
 inputPath="$inputPath"
 outputPath="$outputPath"
 
-convertFolderToHTML "$inputPath" "$outputPath"
+convertFilesToHTML "$inputPath" "$outputPath"
 
 # set permissions of output folder to the same as the input folder - fixes #1
 if [ -d "$inputPath" ] && [ -d "$outputPath" ]; then

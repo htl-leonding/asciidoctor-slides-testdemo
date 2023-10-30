@@ -77,10 +77,6 @@ convertFolderToHTML() {
     outputPath=$2
 
 
-    echo "=== compiling HTML  ==="
-    echo $inputPath
-    echo $outputPath
-
     #i=1
     #numberOfFiles=$(find "$outputPath" -type f -name "*.adoc" | wc -l)
     #for f in $(find "$outputPath" -type f -name "*.adoc"); do
@@ -93,7 +89,11 @@ convertFolderToHTML() {
     #done
 }
 
-convertFileToHTML() {
+convertFilesToHTML() {
+
+    echo "=== compiling HTML  ==="
+    echo $inputPath
+    echo $outputPath
 
 
     docker run --rm \
