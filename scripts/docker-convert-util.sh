@@ -96,27 +96,27 @@ convertFilesToHTML() {
     echo $outputPath
 
 
-    #docker run --rm \
-    #  -v $inputPath:/documents \
-    #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "asciidoctor \
-    #  -r asciidoctor-diagram \
-    #  -a icons=font \
-    #  -a experimental=true \
-    #  -a source-highlighter=rouge \
-    #  -a rouge-theme=github \
-    #  -a rouge-linenums-mode=inline \
-    #  -a docinfo=shared \
-    #  -a imagesdir=images \
-    #  -a toc=left \
-    #  -a toclevels=2 \
-    #  -a sectanchors=true \
-    #  -a sectnums=true \
-    #  -a favicon=themes/favicon.png \
-    #  -a sourcedir=src/main/java \
-    #  -b html5 \
-    #  '**/*.adoc'"
-
     docker run --rm \
       -v ${PWD}/$inputPath:/documents \
-      asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
+      asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "asciidoctor \
+      -r asciidoctor-diagram \
+      -a icons=font \
+      -a experimental=true \
+      -a source-highlighter=rouge \
+      -a rouge-theme=github \
+      -a rouge-linenums-mode=inline \
+      -a docinfo=shared \
+      -a imagesdir=images \
+      -a toc=left \
+      -a toclevels=2 \
+      -a sectanchors=true \
+      -a sectnums=true \
+      -a favicon=themes/favicon.png \
+      -a sourcedir=src/main/java \
+      -b html5 \
+      '**/*.adoc'"
+
+    #docker run --rm \
+    #  -v ${PWD}/$inputPath:/documents \
+    #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
 }
