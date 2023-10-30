@@ -98,7 +98,7 @@ convertFileToHTML() {
 
     docker run --rm \
       -v $inputPath:/documents \
-      asciidoctor/docker-asciidoctor:158 /bin/bash -c "asciidoctor \
+      asciidoctor/docker-asciidoctor:15.8 /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
       -a experimental=true \
