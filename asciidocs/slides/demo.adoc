@@ -1,4 +1,4 @@
-= Some Slide Stütztest 23
+= Some Slide Stütztest 24
 ifndef::imagesdir[:imagesdir: ../images]
 
 image::img.png[]
