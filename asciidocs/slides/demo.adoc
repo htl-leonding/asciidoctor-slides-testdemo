@@ -1,4 +1,4 @@
-= Some Slide Stütztest 48
+= Some Slide Stütztest 49
 :revealjs_theme: sky
 :source-highlighter: highlight.js
 ifndef::imagesdir[:imagesdir: images]
@@ -32,7 +32,7 @@ public record Thing(long id, String name) {
 [%auto-animate]
 == Slide with sources 1
 
-[source,java,linenums,data-id=foo]
+[source,java,linenums]
 ----
 public record Thing(long id, String name) {
 
@@ -42,7 +42,7 @@ public record Thing(long id, String name) {
 [%auto-animate]
 == Slide with sources 2
 
-[source,java,linenums,highlight=2-4,data-id=foo]
+[source,java,linenums,highlight=2-4]
 ----
 public record Thing(long id, String name) {
     public String getNameAndId() {
