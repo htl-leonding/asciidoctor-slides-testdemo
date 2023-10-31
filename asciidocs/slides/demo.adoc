@@ -1,5 +1,4 @@
-= Some Slide Stütztest 56
-xy
+= Some Slide Stütztest 57
 ifndef::imagesdir[:imagesdir: images]
 :revealjs_theme: league
 :revealjs_transition: fade

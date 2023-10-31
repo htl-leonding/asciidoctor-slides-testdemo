@@ -67,8 +67,6 @@ convertFilesToHTML() {
       mv $inputPath/docs/* $inputPath
       rmdir $inputPath/docs
 
-      tree
-
     #docker run --rm \
     #  -v ${PWD}/$inputPath:/documents \
     #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
