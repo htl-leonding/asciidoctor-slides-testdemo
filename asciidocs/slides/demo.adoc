@@ -1,9 +1,9 @@
-= Some Slide Stütztest 55
+= Some Slide Stütztest 56
 xy
 ifndef::imagesdir[:imagesdir: images]
 :revealjs_theme: league
 :revealjs_transition: fade
-:title-slide-background-image: image::img.png
+:title-slide-background-image: img.png
 
 Testing filter by changing documentation file
 
