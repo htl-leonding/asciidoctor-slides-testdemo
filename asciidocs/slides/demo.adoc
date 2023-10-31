@@ -76,7 +76,7 @@ And move to the right position!
 [%auto-animate]
 == !
 
-[source%linenums,js,data-id=planets]
+[source,js,data-id=planets]
 ----
 let planets = [
   { name: 'mars', diameter: 6779 },
@@ -86,7 +86,7 @@ let planets = [
 [%auto-animate]
 == !
 
-[source%linenums,js,data-id=planets]
+[source,js,data-id=planets]
 ----
 let planets = [
   { name: 'mars', diameter: 6779 },
@@ -98,7 +98,7 @@ let planets = [
 [%auto-animate]
 == !
 
-[source%linenums,js,data-id=planets]
+[source,js,data-id=planets]
 ----
 let circumferenceReducer = ( c, planet ) => {
   return c + planet.diameter * Math.PI;
