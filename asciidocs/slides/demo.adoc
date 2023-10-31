@@ -1,9 +1,9 @@
-= Some Slide Stütztest 50
-:revealjs_theme: league
+= Some Slide Stütztest 51
+//:revealjs_theme: league
 :source-highlighter: highlight.js
 ifndef::imagesdir[:imagesdir: images]
 :revealjs_totalTime:
-:revealjs_transition:
+:revealjs_transition: fade
 
 image::img.png[]
 
