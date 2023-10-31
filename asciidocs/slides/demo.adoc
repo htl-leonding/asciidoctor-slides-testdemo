@@ -1,4 +1,4 @@
-= [white]#Some Slide Stütztest 46#
+= [white]#Some# Slide Stütztest 46
 ifndef::imagesdir[:imagesdir: images]
 
 image::img.png[]
@@ -19,6 +19,28 @@ public record Thing(long id, String name) {
 == Slide with sources 2
 
 [source,java,linenums,data-id=foo]
+----
+public record Thing(long id, String name) {
+    public String getNameAndId() {
+        return id + name;
+    }
+}
+----
+
+[%auto-animate]
+== Slide with sources 1
+
+[source,java,linenums,data-id=foo]
+----
+public record Thing(long id, String name) {
+
+}
+----
+
+[%auto-animate]
+== Slide with sources 2
+
+[source,java,linenums,highlight=2-4,data-id=foo]
 ----
 public record Thing(long id, String name) {
     public String getNameAndId() {
