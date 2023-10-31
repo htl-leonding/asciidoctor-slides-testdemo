@@ -1,4 +1,4 @@
-= [white]#Some# Slide Stütztest 46
+= Some Slide Stütztest 47
 ifndef::imagesdir[:imagesdir: images]
 
 image::img.png[]
@@ -48,3 +48,92 @@ public record Thing(long id, String name) {
     }
 }
 ----
+
+[%auto-animate]
+== !
+
+Matched element will be animated automatically!
+
+[%auto-animate]
+== !
+
+[.highlight]
+Matched element will be animated automatically!
+
+And move to the right position!
+
+[%hardbreaks]
+⬆️
+⬆️
+⬆️
+
+
+[%auto-animate]
+== !
+
+[source%linenums,js,data-id=planets]
+----
+let planets = [
+  { name: 'mars', diameter: 6779 },
+]
+----
+
+[%auto-animate]
+== !
+
+[source%linenums,js,data-id=planets]
+----
+let planets = [
+  { name: 'mars', diameter: 6779 },
+  { name: 'earth', diameter: 12742 },
+  { name: 'jupiter', diameter: 139820 }
+]
+----
+
+[%auto-animate]
+== !
+
+[source%linenums,js,data-id=planets]
+----
+let circumferenceReducer = ( c, planet ) => {
+  return c + planet.diameter * Math.PI;
+}
+
+let planets = [
+  { name: 'mars', diameter: 6779 },
+  { name: 'earth', diameter: 12742 },
+  { name: 'jupiter', diameter: 139820 }
+]
+
+let c = planets.reduce( circumferenceReducer, 0 )
+----
+
+
+[%auto-animate,auto-animate-unmatched=false]
+== Unmatched
+
+Introduction. (matched)
+
+[%auto-animate,auto-animate-unmatched=false]
+== Unmatched
+
+Introduction. (matched)
+
+This will be shown instantly ⚡ (unmatched)
+
+
+[%auto-animate,auto-animate-duration=5]
+== Duration
+
+This animation...
+
+[%auto-animate,auto-animate-duration=5]
+== Duration
+
+This animation...
+
+...will take 5 seconds! ⌚
+
+
+
+
