@@ -11,7 +11,7 @@ Testing filter by changing documentation file
 Some content
 
 [%auto-animate]
-== Slide with sources 1
+== Slide with sources
 
 [source,java,linenums,data-id=foo]
 ----
@@ -21,7 +21,7 @@ public record Thing(long id, String name) {
 ----
 
 [%auto-animate]
-== Slide with sources 2
+== Slide with sources
 
 [source,java,linenums,data-id=foo]
 ----
@@ -33,7 +33,7 @@ public record Thing(long id, String name) {
 ----
 
 [%auto-animate]
-== Slide with sources 1
+== Slide with sources
 
 [source,java,linenums]
 ----
@@ -43,7 +43,7 @@ public record Thing(long id, String name) {
 ----
 
 [%auto-animate]
-== Slide with sources 2
+== Slide with sources
 
 [source,java,linenums,highlight=2-4]
 ----
