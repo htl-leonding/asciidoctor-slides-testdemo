@@ -1,8 +1,7 @@
-= Some Slide Stütztest 52
+= Some Slide Stütztest 53
 xy
-:revealjs_theme: league
-:source-highlighter: highlight.js
 ifndef::imagesdir[:imagesdir: images]
+:revealjs_theme: league
 :revealjs_transition: fade
 
 image::img.png[]
