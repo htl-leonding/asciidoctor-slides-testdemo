@@ -1,4 +1,6 @@
-= Some Slide Stütztest 47
+= Some Slide Stütztest 48
+:revealjs_theme: sky
+:source-highlighter: highlight.js
 ifndef::imagesdir[:imagesdir: images]
 
 image::img.png[]
