@@ -16,7 +16,7 @@ convertFilesToSlides() {
          -a imagesdir=images \
          -a revealjsdir=revealjs \
          -a revealjs_slideNumber=c/t \
-         -a revealjs_transition=slide \
+         -a revealjs_transition=fade \
          -a revealjs_hash=true \
          -a sourcedir=src/main/java \
          -b revealjs \
