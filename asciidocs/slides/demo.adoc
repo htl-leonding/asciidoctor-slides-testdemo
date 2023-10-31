@@ -1,12 +1,15 @@
-= Some Slide Stütztest 54
+= Some Slide Stütztest 55
 xy
 ifndef::imagesdir[:imagesdir: images]
 :revealjs_theme: league
 :revealjs_transition: fade
-
-image::img.png[]
+:title-slide-background-image: image::img.png
 
 Testing filter by changing documentation file
+
+== Slide
+
+Some content
 
 [%auto-animate]
 == Slide with sources 1
