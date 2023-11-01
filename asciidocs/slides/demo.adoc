@@ -1,7 +1,4 @@
-= Some Slide Stütztest 59
-ifndef::imagesdir[:imagesdir: images]
-:revealjs_theme: league
-:revealjs_transition: fade
+= Some Slide Stütztest 60
 :title-slide-background-image: img.png
 
 Testing filter by changing documentation file
@@ -17,40 +14,6 @@ Some content
 ----
 public record Thing(long id, String name) {
 
-}
-----
-
-[%auto-animate]
-== Slide with sources
-
-[source,java,linenums,data-id=foo]
-----
-public record Thing(long id, String name) {
-    public String getNameAndId() {
-        return id + name;
-    }
-}
-----
-
-[%auto-animate]
-== Slide with sources
-
-[source,java,linenums]
-----
-public record Thing(long id, String name) {
-
-}
-----
-
-[%auto-animate]
-== Slide with sources
-
-[source,java,linenums,highlight=2-4]
-----
-public record Thing(long id, String name) {
-    public String getNameAndId() {
-        return id + name;
-    }
 }
 ----
 
