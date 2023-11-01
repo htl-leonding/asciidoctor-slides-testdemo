@@ -12,12 +12,13 @@ convertFilesToSlides() {
          -r asciidoctor-diagram \
          -a icons=font \
          -a revealjs_theme=league@ \
-         -a imagesdir=images \
+         -a imagesdir=images@ \
          -a revealjsdir=revealjs \
-         -a revealjs_slideNumber=c/t \
-         -a revealjs_transition=slide \
-         -a revealjs_hash=true \
-         -a sourcedir=src/main/java \
+         -a source-highlighter=rouge@ \
+         -a revealjs_slideNumber=c/t@ \
+         -a revealjs_transition=slide@ \
+         -a revealjs_hash=true@ \
+         -a sourcedir=src/main/java@ \
          -b revealjs \
          '**/*.adoc'"
 }
