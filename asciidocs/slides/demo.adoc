@@ -1,4 +1,4 @@
-= Some Slide Stütztest 62
+= Some Slide Stütztest 63
 :revealjs_theme: sky
 :source-highlighter: highlight.js
 :title-slide-background-image: img.png
@@ -9,8 +9,9 @@ Testing filter by changing documentation file
 
 == Slide
 
-* Some content
-* xxx
+[.stretch]
+image::img.png[]
+
 
 [%auto-animate]
 == !

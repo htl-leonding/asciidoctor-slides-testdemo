@@ -11,7 +11,7 @@ convertFilesToSlides() {
          asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor-revealjs \
          -r asciidoctor-diagram \
          -a icons=font \
-         -a revealjs_theme=league \
+         -a revealjs_theme=league@ \
          -a imagesdir=images \
          -a revealjsdir=revealjs \
          -a revealjs_slideNumber=c/t \
