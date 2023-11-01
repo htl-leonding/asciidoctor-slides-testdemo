@@ -1,21 +1,13 @@
-= Some Slide Stütztest 60
+= Some Slide Stütztest 61
 :title-slide-background-image: img.png
+:revealjs_theme: sky
+
 
 Testing filter by changing documentation file
 
 == Slide
 
 Some content
-
-[%auto-animate]
-== Slide with sources
-
-[source,java,linenums,data-id=foo]
-----
-public record Thing(long id, String name) {
-
-}
-----
 
 [%auto-animate]
 == !
@@ -39,7 +31,7 @@ And move to the right position!
 [%auto-animate]
 == !
 
-[source,js,data-id=planets]
+[source%linenums,js,data-id=planets]
 ----
 let planets = [
   { name: 'mars', diameter: 6779 },
@@ -49,7 +41,7 @@ let planets = [
 [%auto-animate]
 == !
 
-[source,js,data-id=planets]
+[source%linenums,js,data-id=planets]
 ----
 let planets = [
   { name: 'mars', diameter: 6779 },
@@ -61,7 +53,7 @@ let planets = [
 [%auto-animate]
 == !
 
-[source,js,data-id=planets]
+[source%linenums,js,data-id=planets]
 ----
 let circumferenceReducer = ( c, planet ) => {
   return c + planet.diameter * Math.PI;

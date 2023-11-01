@@ -12,7 +12,7 @@ convertFilesToSlides() {
          -r asciidoctor-diagram \
          -a icons=font \
          -a revealjs_theme=league \
-         -a source-highlighter=rouge \
+         #-a source-highlighter=rouge \
          -a imagesdir=images \
          -a revealjsdir=revealjs \
          -a revealjs_slideNumber=c/t \
