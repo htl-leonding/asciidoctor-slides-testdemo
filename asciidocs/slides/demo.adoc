@@ -1,6 +1,34 @@
-= Some Slide Stütztest 63
+= Some Slide Stütztest 64
+//:author: C. Aberger, T. Stütz
+:email: t.stuetz@htl-leonding.ac.at
+:revnumber: 1.0
+:revdate: {docdate}
+:revremark: SLIDEDEMO @ HTL Leonding
+:encoding: utf-8
+:lang: de
+:doctype: article
+:icons: font
+:customcss: css/presentation.css
+//:revealjs_customtheme: css/sky.css
+//:revealjs_customtheme: css/black.css
+:revealjs_width: 1408
+:revealjs_height: 792
+:source-highlighter: highlightjs
+//:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
+//:revealjs_parallaxBackgroundSize: 4936px 2092px
+:highlightjs-theme: css/atom-one-light.css
+// we want local served font-awesome fonts
+:iconfont-remote!:
+:iconfont-name: fonts/fontawesome/css/all
+//:revealjs_parallaxBackgroundImage: background-landscape-light-orange.jpg
+//:revealjs_parallaxBackgroundSize: 4936px 2092px
+ifdef::env-ide[]
+:imagesdir: ../images
+endif::[]
+ifndef::env-ide[]
+:imagesdir: images
+endif::[]
 :revealjs_theme: sky
-:source-highlighter: highlight.js
 :title-slide-background-image: img.png
 :title-slide-transition: zoom
 :title-slide-transition-speed: fast
@@ -98,6 +126,47 @@ This animation...
 
 ...will take 5 seconds! ⌚
 
+[.timeline]
+== Timeline
+
+[.step]
+* *1997* - Mondrian (Google)
+* *2002* - Codestriker (IBM)
+* *2003* - Rietveld (Google)
+* *2004* - Gerrit (Google, Android, Eclipse, OpenStack, GWT, IBM...)
+* *2007* - Crucible (Atlassian)
+* *2007* - Phabricator (Facebook, AngularJS, Quora, Uber)
+* *2008* - Github
+* *2011* - Gitlab
+* *2012* - CodeFlow (Microsoft)
+
+[.pyramid]
+== Pyramid
+
+[.step]
+* Continuous deployment
+* Continuous reporting
+* Pre-commit pipeline
+* Continuous integration/testing
+* Design & architecture
+* Continuous improvement
+* Quality of work life
+* Organization and culture
+
+== Cloud
+
+[cloud]
+....
+Continuous-Everything, Keep It Simple Stupid, Everything-As-Code, Don't Repeat Yourself, You build it You run it, Separation of concerns, Shift left, 80% of effects from 20% of causes, You Ain't Gonna Need It, Fail fast, What is measured improves, Culture Automation Lean Measurement Sharing, Value over cost
+....
 
 
+[.questions]
+=== !
+
+[.bubbles]
+=== !
+
+[.hands]
+=== !
 
