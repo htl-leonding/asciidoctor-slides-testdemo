@@ -1,13 +1,16 @@
-= Some Slide Stütztest 61
-:title-slide-background-image: img.png
+= Some Slide Stütztest 62
 :revealjs_theme: sky
-
+:source-highlighter: highlight.js
+:title-slide-background-image: img.png
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
 
 Testing filter by changing documentation file
 
 == Slide
 
-Some content
+* Some content
+* xxx
 
 [%auto-animate]
 == !
