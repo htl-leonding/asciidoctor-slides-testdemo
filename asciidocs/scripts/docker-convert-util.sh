@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 convertFilesToSlides() {
   buildPath=$1

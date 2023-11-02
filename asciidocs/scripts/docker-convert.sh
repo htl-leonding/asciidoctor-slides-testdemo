@@ -1,6 +1,4 @@
-#!/usr/bin/bash
-
-printenv SHELL
+#!/usr/bin/env bash
 
 inputPath="$1"
 createSlides="$2"
@@ -10,7 +8,6 @@ ASCIIDOCTOR_VERSION="1.58"
 echo "input => $inputPath"
 echo "createSlides => $createSlides"
 echo building html
-tree
 
 if [ $createSlides = true ]; then
     convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
