@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+printenv SHELL
+
 inputPath="$1"
 createSlides="$2"
 source $inputPath/scripts/docker-convert-util.sh
