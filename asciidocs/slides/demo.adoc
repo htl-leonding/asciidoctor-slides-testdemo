@@ -1,4 +1,4 @@
-= Some Slide Stütztest 66
+= Some Slide Stütztest 70
 //:author: C. Aberger, T. Stütz
 :email: t.stuetz@htl-leonding.ac.at
 :revnumber: 1.0

@@ -54,7 +54,7 @@ Sometimes it is useful to just convert or push it locally for a quick update. In
 This script will just convert it into the ouput directory. See table below for the parameters..
 
 ```shell
-./convert.sh <input-dir> <output-dir> <slides-convert>
+./local-convert.sh <input-dir> <output-dir> <slides-convert>
 ```
 
 ### Publish

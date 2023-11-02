@@ -1,13 +1,16 @@
 #!/usr/bin/bash
 
 convertFilesToSlides() {
-  inputPath=$1
+  buildPath=$1
   asciidoctorVersion=$2
 
-  downloadReveal $inputPath
+  echo "=== compiling HTML - slides  ==="
+  echo $buildPath
+
+  downloadReveal $buildPath
 
   docker run --rm \
-         -v ${PWD}/$inputPath/slides:/documents \
+         -v ${PWD}/$buildPath/slides:/documents \
          asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor-revealjs \
          -r asciidoctor-diagram \
          -a icons=font \
@@ -24,9 +27,9 @@ convertFilesToSlides() {
 }
 
 downloadReveal() {
-  inputPath=$1
+  buildPath=$1
   REVEAL_VERSION="5.0.0"
-  REVEAL_DIR="$inputPath/slides"
+  REVEAL_DIR="$buildPath/slides"
   curl -L https://github.com/hakimel/reveal.js/archive/$REVEAL_VERSION.zip --output revealjs.zip
   unzip revealjs.zip
 
@@ -37,14 +40,14 @@ downloadReveal() {
 
 
 convertFilesToHTML() {
-    inputPath=$1
+    buildPath=$1
     asciidoctorVersion=$2
 
-    echo "=== compiling HTML  ==="
-    echo $inputPath
+    echo "=== compiling HTML - docs  ==="
+    echo $buildPath
 
     docker run --rm \
-      -v ${PWD}/$inputPath/docs:/documents \
+      -v ${PWD}/$buildPath/docs:/documents \
       asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
@@ -63,11 +66,14 @@ convertFilesToHTML() {
       -b html5 \
       '**/*.adoc'"
 
-      rm -rf -v $inputPath/docs/*.adoc
-      mv $inputPath/docs/* $inputPath
-      rmdir $inputPath/docs
+      mv $buildPath/docs/* $buildPath
+      rmdir $buildPath/docs
+      # rm -f -v $buildPath/**/*.adoc
+      #echo $buildPath/**/*.adoc
+      find $buildPath -depth -name "*.adoc" -print
+      find $buildPath -depth -name "*.adoc" -delete
 
     #docker run --rm \
-    #  -v ${PWD}/$inputPath:/documents \
+    #  -v ${PWD}/$buildPath:/documents \
     #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
 }
