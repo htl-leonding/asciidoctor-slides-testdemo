@@ -7,6 +7,7 @@ ASCIIDOCTOR_VERSION="1.58"
 echo "input => $inputPath"
 echo "createSlides => $createSlides"
 echo building html
+tree
 
 if [ $createSlides = true ]; then
     convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
