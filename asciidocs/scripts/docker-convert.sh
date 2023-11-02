@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 
 inputPath="$1"
 createSlides="$2"
