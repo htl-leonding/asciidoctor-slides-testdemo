@@ -1,5 +1,4 @@
 
-
 inputPath="$1"
 createSlides="$2"
 source $inputPath/scripts/docker-convert-util.sh
@@ -13,7 +12,7 @@ if [ $createSlides = true ]; then
     convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
 fi
 
-inputPath="$inputPath"
+#inputPath="$inputPath"
 
 convertFilesToHTML "$inputPath" $ASCIIDOCTOR_VERSION
 
